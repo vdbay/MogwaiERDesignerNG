@@ -115,11 +115,11 @@ public class TableEditor extends BaseEditor {
 		editingView.getAttributesTable().getColumnModel().getColumn(0).setCellEditor(attributeEditor);
 		editingView.getAttributesTable().getSelectionModel().addListSelectionListener(e -> updateAttributeEditFields());
 
-		tableBindingInfo.addBinding("name", editingView.getEntityName(), true);
+		tableBindingInfo.addBinding("name", editingView.getEntityName(), false);
 		tableBindingInfo.addBinding("comment", editingView.getEntityComment());
 		tableBindingInfo.configure();
 
-		indexBindingInfo.addBinding("name", editingView.getIndexName(), true);
+		indexBindingInfo.addBinding("name", editingView.getIndexName(), false);
 		indexBindingInfo.addBinding("attributes", new IndexAttributesPropertyAdapter(editingView.getIndexFieldList()
 		));
 
